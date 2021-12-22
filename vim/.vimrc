@@ -58,6 +58,6 @@ set splitright
 
 
 " colorscheme nord
-colorscheme challenger-deep
+colorscheme challenger_deep
 
 let g:lightline = { 'colorscheme': 'challenger_deep'}
