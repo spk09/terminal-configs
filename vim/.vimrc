@@ -56,8 +56,12 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
+let g:lightline = { 'colorscheme': 'one'}
+" This hides the mode, don't need it if we using lightline
+set noshowmode
 
+" editor colorscheme
 " colorscheme nord
 colorscheme challenger_deep
 
-let g:lightline = { 'colorscheme': 'challenger_deep'}
+
