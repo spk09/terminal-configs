@@ -34,6 +34,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " forked
 Plug 'kyazdani42/nvim-web-devicons'
 
+" nvim-tmux-navigation
+Plug 'alexghergh/nvim-tmux-navigation'
+
 call plug#end()
 
 filetype plugin indent on
@@ -54,11 +57,20 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
-" split navigation - ctrl + direction
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" split navigation - we have 2 ways - ive commented out the just nvim way
+" 1 - ctrl + direction
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
+" 2 - tmuxnvaigator plugin
+nnoremap <silent> <C-h> :lua require'nvim-tmux-navigation'.NvimTmuxNavigateLeft()<cr>
+nnoremap <silent> <C-j> :lua require'nvim-tmux-navigation'.NvimTmuxNavigateDown()<cr>
+nnoremap <silent> <C-k> :lua require'nvim-tmux-navigation'.NvimTmuxNavigateUp()<cr>
+nnoremap <silent> <C-l> :lua require'nvim-tmux-navigation'.NvimTmuxNavigateRight()<cr>
+nnoremap <silent> <C-\> :lua require'nvim-tmux-navigation'.NvimTmuxNavigateLastActive()<cr>
+nnoremap <silent> <C-Space> :lua require'nvim-tmux-navigation'.NvimTmuxNavigateNext()<cr>
+" end spolit navigation
 
 " split panes to the left and below
 set splitbelow
