@@ -19,6 +19,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 " lightweight powerline replacement
 Plug 'itchyny/lightline.vim'
@@ -63,14 +64,14 @@ set expandtab
 " nnoremap <C-K> <C-W><C-K>
 " nnoremap <C-L> <C-W><C-L>
 " nnoremap <C-H> <C-W><C-H>
-" 2 - tmuxnvaigator plugin
+" 2 - tmuxnavigator plugin
 nnoremap <silent> <C-h> :lua require'nvim-tmux-navigation'.NvimTmuxNavigateLeft()<cr>
 nnoremap <silent> <C-j> :lua require'nvim-tmux-navigation'.NvimTmuxNavigateDown()<cr>
 nnoremap <silent> <C-k> :lua require'nvim-tmux-navigation'.NvimTmuxNavigateUp()<cr>
 nnoremap <silent> <C-l> :lua require'nvim-tmux-navigation'.NvimTmuxNavigateRight()<cr>
 nnoremap <silent> <C-\> :lua require'nvim-tmux-navigation'.NvimTmuxNavigateLastActive()<cr>
 nnoremap <silent> <C-Space> :lua require'nvim-tmux-navigation'.NvimTmuxNavigateNext()<cr>
-" end spolit navigation
+" end split navigation
 
 " split panes to the left and below
 set splitbelow
@@ -79,6 +80,15 @@ set splitright
 let g:lightline = { 'colorscheme': 'one'}
 " This hides the mode, don't need it if we using lightline
 set noshowmode
+
+" Telescope (find file) bindings
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fd <cmd>Telescope git_files<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+" 
 
 " editor colorscheme
 " colorscheme nord
