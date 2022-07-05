@@ -11,16 +11,6 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 " vim-gitgutter
 Plug 'airblade/vim-gitgutter'
 
-" language server protocol thing - inital configs
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'neovim/nvim-lspconfig'
-
-" finder/ sorter picker
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-
 " lightweight powerline replacement
 Plug 'itchyny/lightline.vim'
 
@@ -28,6 +18,22 @@ Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 " Plug 'vim-scripts/The-NERD-tree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" nvim specific
+if has('nvim')
+" language server protocol thing - inital configs
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'williamboman/nvim-lsp-installer'
+Plug 'neovim/nvim-lspconfig'
+
+" Completion
+Plug 'hrsh7th/nvim-cmp'
+
+" finder/ sorter picker
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 " dev icons
 " original
@@ -37,12 +43,12 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 " nvim-tmux-navigation
 Plug 'alexghergh/nvim-tmux-navigation'
+endif
 
 call plug#end()
 
-filetype plugin indent on
+" filetype plugin indent on
 
-colo darkblue
 syntax on
 set backspace=indent,eol,start
 
@@ -93,5 +99,6 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " editor colorscheme
 " colorscheme nord
 colorscheme challenger_deep
+" colo darkblue
 
 
