@@ -64,7 +64,7 @@ call plug#end()
 syntax on
 set backspace=indent,eol,start
 
-set number
+set relativenumber
 set hlsearch
 set termguicolors
 
