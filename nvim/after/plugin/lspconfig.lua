@@ -85,6 +85,10 @@ lspconfig.sumneko_lua.setup({
 })
 lspconfig.gopls.setup({})
 lspconfig.terraformls.setup({})
+vim.api.nvim_create_autocmd({"BufWritePre"}, {
+  pattern = {"*.tf", "*.tfvars"},
+  callback = vim.lsp.buf.formatting_sync,
+})
 lspconfig.rust_analyzer.setup({})
 lspconfig.clangd.setup({})
 lspconfig.jsonls.setup({})
